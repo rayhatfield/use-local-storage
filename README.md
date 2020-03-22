@@ -11,7 +11,7 @@ npm install --save @raytheist/use-local-storage
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React from 'react'
 
 import useLocalStorage from '@raytheist/use-local-storage'
 
