@@ -1,21 +1,12 @@
-import * as React from 'react'
+import {useState} from 'react'
 
-export const useMyHook = () => {
-  let [{
-    counter
-  }, setState] = React.useState({
-    counter: 0
-  })
-
-  React.useEffect(() => {
-    let interval = window.setInterval(() => {
-      counter++
-      setState({counter})
-    }, 1000)
-    return () => {
-      window.clearInterval(interval)
-    }
-  }, [])
-
-  return counter
+export default function useStorage (key, initial) {
+	const [state, setState] = useState(global.localStorage?.getItem(key) || initial)
+	return [
+		state,
+		value => {
+			global.localStorage.setItem(key, value)
+			return setState(value)
+		}
+	]
 }
