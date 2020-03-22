@@ -2,8 +2,6 @@
 
 > A React hook that works like useState but persists via localStorage
 
-[![NPM](https://img.shields.io/npm/v/@raytheist/use-local-storage.svg)](https://www.npmjs.com/package/@raytheist/use-local-storage) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-
 ## Install
 
 ```bash
@@ -15,12 +13,13 @@ npm install --save @raytheist/use-local-storage
 ```jsx
 import React, { Component } from 'react'
 
-import { useMyHook } from '@raytheist/use-local-storage'
+import useLocalStorage from '@raytheist/use-local-storage'
 
 const Example = () => {
-  const example = useMyHook()
+  const [value, setValue] = useLocalStorage('storage-key', 0);
+  
   return (
-    <div>{example}</div>
+      <button onClick={() => setValue(value + 1)}>{value}</button>
   )
 }
 ```
@@ -28,7 +27,3 @@ const Example = () => {
 ## License
 
 MIT © [rayhatfield](https://github.com/rayhatfield)
-
----
-
-This hook is created using [create-react-hook](https://github.com/hermanya/create-react-hook).
