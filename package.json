@@ -1,8 +1,14 @@
 {
   "name": "@raytheist/use-local-storage",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A React hook that works like useState but persists via localStorage",
-  "keywords": ["react", "hook", "localStorage", "hooks", "storage"],
+  "keywords": [
+    "react",
+    "hook",
+    "localStorage",
+    "hooks",
+    "storage"
+  ],
   "homepage": "https://github.com/rayhatfield/use-local-storage#readme",
   "author": "rayhatfield",
   "license": "MIT",
